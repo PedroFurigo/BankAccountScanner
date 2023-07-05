@@ -136,7 +136,7 @@ public class NewAccount {
      * @param amount Amount to be withdrawn
      */
     public void withdraw(double amount) {
-        if (this.getBalance() <= amount) {
+        if (this.getBalance() < amount) {
             System.out.println("You don't have enough balance to withdraw!");
         } else {
             this.balance -= amount;
@@ -157,8 +157,8 @@ public class NewAccount {
     /**
      * Calculates the account's earnings.
      */
-    public void calculateEarnings() {
-        this.balance += (this.balance * 10 / 100);
+    public void calculateEarnings(double earnings) {
+        this.balance += (this.balance * earnings);
         System.out.println("Your balance with earnings is: " + getBalance());
     }
 
